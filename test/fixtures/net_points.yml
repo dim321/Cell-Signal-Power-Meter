@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 1.5
+  longitude: 1.5
+  dbm: 1
+  asu: 1
+  mcc: 1
+  operator: one
+  mnc: 1
+  net_type: MyString
+  user: one
+
+two:
+  latitude: 1.5
+  longitude: 1.5
+  dbm: 1
+  asu: 1
+  mcc: 1
+  operator: two
+  mnc: 1
+  net_type: MyString
+  user: two

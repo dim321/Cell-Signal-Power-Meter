@@ -1,0 +1,35 @@
+
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>&libraries=visualization">
+</script>
+
+<div id="map"></div>
+    <script>
+      var map;
+      var markers = [];
+      var heatmapData = [];
+      markers = <%= @markers %>;
+
+      for (var i = 0; i < markers.length; i++) {
+        var marker = markers[i];
+        heatmapData.push({location: new google.maps.LatLng(marker[0], marker[1]), weight: marker[2], title: "Уровень сигнала " + marker[2] + "dBm"}) 
+
+      }
+
+      
+      var Kazan = new google.maps.LatLng(55.611587, 49.2968417);
+      
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: Kazan,
+        zoom: 13,
+        //mapTypeId: 'satellite'
+      });
+      
+      var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: heatmapData
+       //data: markers
+      });
+      heatmap.setMap(map);
+
+    </script>
+    

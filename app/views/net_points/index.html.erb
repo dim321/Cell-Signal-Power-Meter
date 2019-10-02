@@ -1,0 +1,54 @@
+<%- model_class = NetPoint -%>
+<div class="page-header">
+ <!-- <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1> -->
+ <h2> Результаты измерений: точки покрытия сети мобильной связи. </h2>
+ <!-- <%= button_to "MTC", net_points_path(@net_point, operator_id: 1) %>  -->
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <!--  <th><%= model_class.human_attribute_name(:id) %></th>  -->
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <th><%= model_class.human_attribute_name(:dbm) %></th>
+    <!--  <th><%= model_class.human_attribute_name(:asu).upcase %></th> -->
+      <th><%= model_class.human_attribute_name(:mcc).upcase %></th>
+      <th><%= model_class.human_attribute_name(:operator_id) %></th>
+    <!--   <th><%= model_class.human_attribute_name(:mnc).upcase %></th>  -->
+      <th><%= model_class.human_attribute_name(:net_type) %></th>
+    <!--  <th><%= model_class.human_attribute_name(:user_id) %></th>  -->
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @net_points.each do |net_point| %>
+      <tr>
+      <!--  <td><%= link_to net_point.id, net_point_path(net_point) %></td>  -->
+        <td><%= net_point.latitude %></td>
+        <td><%= net_point.longitude %></td>
+        <td><%= net_point.dbm %></td>
+      <!--  <td><%= net_point.asu %></td>  -->
+        <td><%= net_point.mcc %></td>
+        <td><%= net_point.operator.name %></td> 
+      <!--  <td><%= net_point.mnc %></td>  -->
+        <td><%= net_point.net_type %></td>
+      <!--  <td><%= net_point.user_id %></td>  -->
+        <td><%=l net_point.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_net_point_path(net_point), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      net_point_path(net_point),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_net_point_path,
+            :class => 'btn btn-primary' %>

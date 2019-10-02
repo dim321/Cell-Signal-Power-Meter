@@ -1,0 +1,90 @@
+<%= form_for @net_point, :html => { :class => "form-horizontal net_point" } do |f| %>
+
+  <% if @net_point.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@net_point.errors.count, "error") %> prohibited this net_point from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @net_point.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :latitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :latitude, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:latitude) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :longitude, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:longitude) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :dbm, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dbm, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dbm) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :asu, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :asu, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:asu) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mcc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :mcc, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:mcc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :operator_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :operator_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:operator_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mnc, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :mnc, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:mnc) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :net_type, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :net_type, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:net_type) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:user_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                net_points_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
