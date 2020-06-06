@@ -96,7 +96,6 @@ GEM
       rails (>= 3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gmaps4rails (2.1.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
@@ -232,7 +231,7 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.1.10)
@@ -247,7 +246,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   geokit-rails
-  gmaps4rails
   jbuilder (~> 2.7)
   jcanvas-rails
   jquery-rails
