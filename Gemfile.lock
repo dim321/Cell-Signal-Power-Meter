@@ -96,7 +96,6 @@ GEM
       rails (>= 3.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gmaps4rails (2.1.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
@@ -136,7 +135,7 @@ GEM
     pg (1.1.4)
     public_suffix (4.0.1)
     puma (3.12.1)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -247,7 +246,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   geokit-rails
-  gmaps4rails
   jbuilder (~> 2.7)
   jcanvas-rails
   jquery-rails
